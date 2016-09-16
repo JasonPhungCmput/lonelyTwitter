@@ -52,6 +52,7 @@ public class LonelyTwitterActivity extends Activity {
 
 				String test = newTweet.getMessage();
 
+
 				ArrayList<Tweet> tweetList = new ArrayList<Tweet>();
 				tweetList.add(newTweet);
 				tweetList.add(newestImportantTweet);

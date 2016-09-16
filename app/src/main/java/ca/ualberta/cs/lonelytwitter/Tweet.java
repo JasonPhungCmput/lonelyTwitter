@@ -1,5 +1,6 @@
 package ca.ualberta.cs.lonelytwitter;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.InputMismatchException;
 
@@ -9,19 +10,21 @@ import java.util.InputMismatchException;
 public abstract class Tweet {
     private String message;
     private Date date;
+    private ArrayList<CurrentMood> moodList;
+    //private String mood;
 
     public Tweet(String message){
         this.message = message;
+        //this.mood = mood;
     }
 
     public Tweet(String message, Date date){
         this.message = message;
         this.date = date;
+        //this.mood = mood;
     }
 
     public abstract Boolean isImportant();
-
-
 
 
     public void setMessage(String message) throws TweetTooLongException {
@@ -43,4 +46,18 @@ public abstract class Tweet {
     public Date getDate() {
         return date;
     }
+
+    public ArrayList<CurrentMood> getMoodList() {
+        return moodList;
+    }
+
+    public void setMoodList(ArrayList<CurrentMood> moodList) {
+        this.moodList = moodList;
+    }
+
+    public void addMood(CurrentMood mood){
+        this.moodList.add(mood);
+    }
+
+
 }
